@@ -1,0 +1,284 @@
+//themes
+
+.light {
+  --BG: hsl(0, 0%, 100%);
+  --Top_BG_Pattern: hsl(0, 0%, 90%);
+  --Card_BG: hsl(227, 47%, 96%);
+  --Text_sec: hsl(228, 12%, 44%);
+  --Text_main: hsl(230, 17%, 14%);
+}
+
+.dark {
+  --BG: hsl(230, 17%, 14%);
+  --Top_BG_Pattern: hsl(232, 11%, 26%);
+  --Card_BG: hsl(228, 28%, 20%);
+  --Text_sec: hsl(228, 34%, 66%);
+  --Text_main: hsl(0, 0%, 100%);
+}
+
+//mixin
+
+@mixin social-media-border($color) {
+  border-top: 4px solid $color;
+}
+
+//main colors
+:root {
+  --toggle_bg_light: hsl(230, 22%, 74%);
+  --toggle_btn_light: hsl(0, 0%, 100%);
+  --toggle_bg_dark: linear-gradient(
+    to right,
+    hsl(210, 78%, 56%),
+    hsl(146, 68%, 55%)
+  );
+  --toggle_btn_dark: hsl(230, 17%, 14%);
+}
+$states-up: hsl(163, 72%, 41%);
+$states-down: hsl(356, 69%, 56%);
+$Facebook-card-border-color: hsl(208, 92%, 53%);
+$Twitter-card-border-color: hsl(203, 89%, 53%);
+$Instagram-card-border-color: linear-gradient(
+  to right,
+  hsl(37, 97%, 70%),
+  hsl(329, 70%, 58%)
+);
+$YouTube-card-border-color: hsl(348, 97%, 39%);
+
+//reset
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// general styles
+
+body {
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background-color: var(--BG);
+  font-weight: bold;
+}
+
+li {
+  list-style: none;
+}
+
+h1 {
+  color: var(--Text_main);
+  line-height: 1.6;
+  font-size: 1.5rem;
+}
+
+strong,
+h2 {
+  color: var(--Text_main);
+}
+
+h3,
+p {
+  color: var(--Text_sec);
+}
+p {
+  font-size: 0.8rem;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #80808024;
+  margin: 1rem 0rem;
+}
+//
+
+// style class
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.states {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.states--green p {
+  color: $states-up;
+}
+
+.states--red p {
+  color: $states-down;
+}
+
+.facebook-border {
+  @include social-media-border($Facebook-card-border-color);
+}
+
+.twitter-border {
+  @include social-media-border($Twitter-card-border-color);
+}
+
+.instagram-border {
+  border-top: 4px solid;
+  border-image: $Instagram-card-border-color 1 stretch;
+}
+
+.youtube-border {
+  @include social-media-border($YouTube-card-border-color);
+}
+
+//header
+
+.header__title p {
+  font-size: 0.9rem;
+}
+
+.mode {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+// toggle btn
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.switch input {
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--toggle_bg_light);
+  transition: all 0.4s;
+
+  &:hover {
+    background-image: var(--toggle_bg_dark);
+  }
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  right: 4px;
+  top: 5px;
+  background-color: var(--toggle_btn_light);
+  transition: all 0.4s;
+}
+
+input:checked + .slider {
+  background-image: var(--toggle_bg_dark);
+}
+
+input:checked + .slider::before {
+  background-color: var(--toggle_btn_dark);
+}
+
+input:checked + .slider:before {
+  transform: translateX(-30px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+//
+
+// grid for dashboard cards and overview cards
+
+.dashboard__cards,
+.overview__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  & > * {
+    padding: 1rem;
+    background-color: var(--Card_BG);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      background-color: var(--Top_BG_Pattern);
+    }
+  }
+}
+
+//dashboard cards
+
+.dashboard__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.dashboard__card__social-media {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.dashboard__card__followers {
+  text-align: center;
+  & strong {
+    font-size: 3rem;
+  }
+  & p {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+}
+
+//overview cars
+
+.overview h2 {
+  margin: 2rem auto;
+}
+
+.overview__card {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, auto);
+  justify-content: space-between;
+  & img {
+    justify-self: end;
+  }
+  & strong {
+    font-size: 1.8rem;
+  }
+}
+
+//media query
+
+@media screen and (min-width: 800px) {
+  hr {
+    display: none;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+}

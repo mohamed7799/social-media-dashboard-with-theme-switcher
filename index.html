@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>social media dashboard with theme switcher</title>
+  </head>
+
+  <body class="light">
+    <header class="container">
+      <div class="header__title">
+        <h1>Social Media Dashboard</h1>
+        <p>Total Followers: 23,004</p>
+      </div>
+      <hr />
+      <div class="mode">
+        <p>Dark Mode</p>
+        <label class="switch">
+          <input id="toggle-js" type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+    </header>
+    <main class="container">
+      <ul class="dashboard__cards">
+        <li class="dashboard__card facebook-border">
+          <div class="dashboard__card__social-media">
+            <img src="./imgs/icon-facebook.svg" alt="" />
+            <p>@nathanf</p>
+          </div>
+          <div class="dashboard__card__followers">
+            <strong>1987</strong>
+            <p>Followers</p>
+          </div>
+          <div class="states states--green">
+            <img src="./imgs/icon-up.svg" alt="" />
+            <p>12 Today</p>
+          </div>
+        </li>
+        <li class="dashboard__card twitter-border">
+          <div class="dashboard__card__social-media">
+            <img src="./imgs/icon-twitter.svg" alt="" />
+            <p>@nathanf</p>
+          </div>
+          <div class="dashboard__card__followers">
+            <strong>1044</strong>
+            <p>Followers</p>
+          </div>
+          <div class="states states--green">
+            <img src="./imgs/icon-up.svg" alt="" />
+            <p>99 Today</p>
+          </div>
+        </li>
+        <li class="dashboard__card instagram-border">
+          <div class="dashboard__card__social-media">
+            <img src="./imgs/icon-instagram.svg" alt="" />
+            <p>@realnathanf</p>
+          </div>
+          <div class="dashboard__card__followers">
+            <strong> 11k</strong>
+            <p>Followers</p>
+          </div>
+          <div class="states states--green">
+            <img src="./imgs/icon-up.svg" alt="" />
+            <p>1099 Today</p>
+          </div>
+        </li>
+        <li class="dashboard__card youtube-border">
+          <div class="dashboard__card__social-media">
+            <img src="./imgs/icon-youtube.svg" alt="" />
+            <p>Nathan F.</p>
+          </div>
+          <div class="dashboard__card__followers">
+            <strong>8239</strong>
+            <p>Subscribers</p>
+          </div>
+          <div class="states states--red">
+            <img src="./imgs/icon-down.svg" alt="" />
+            <p>144 Today</p>
+          </div>
+        </li>
+      </ul>
+      <section class="overview">
+        <h2>Overview - Today <Todayp></Todayp></h2>
+        <ul class="overview__cards">
+          <li class="overview__card">
+            <h3>Page Views</h3>
+            <img src="./imgs/icon-facebook.svg" alt="" /><strong>87</strong>
+            <div class="states states--green">
+              <img src="./imgs/icon-up.svg" alt="" />
+              <p>3%</p>
+            </div>
+          </li>
+          <li class="overview__card">
+            <h3>Likes</h3>
+            <img src="./imgs/icon-facebook.svg" alt="" /><strong>52</strong>
+            <div class="states states--red">
+              <img src="./imgs/icon-down.svg" alt="" />
+              <p>2%</p>
+            </div>
+          </li>
+          <li class="overview__card">
+            <h3>Likes</h3>
+            <img src="./imgs/icon-instagram.svg" alt="" /><strong>5462</strong>
+            <div class="states states--green">
+              <img src="./imgs/icon-up.svg" alt="" />
+              <p>2257%</p>
+            </div>
+          </li>
+          <li class="overview__card">
+            <h3>Profile Views</h3>
+            <img src="./imgs/icon-instagram.svg" alt="" /><strong>52k</strong>
+            <div class="states states--green">
+              <img src="./imgs/icon-up.svg" alt="" />
+              <p>1375%</p>
+            </div>
+          </li>
+          <li class="overview__card">
+            <h3>Retweets</h3>
+            <img src="./imgs/icon-twitter.svg" alt="" /><strong>117</strong>
+            <div class="states states--green">
+              <img src="./imgs/icon-up.svg" alt="" />
+              <p>303%</p>
+            </div>
+          </li>
+          <li class="overview__card">
+            <h3>Likes</h3>
+            <img src="./imgs/icon-twitter.svg" alt="" /><strong>507</strong>
+            <div class="states states--green">
+              <img src="./imgs/icon-up.svg" alt="" />
+              <p>553%</p>
+            </div>
+          </li>
+          <li class="overview__card">
+            <h3>Likes</h3>
+            <img src="./imgs/icon-youtube.svg" alt="" /><strong>107</strong>
+            <div class="states states--red">
+              <img src="./imgs/icon-down.svg" alt="" />
+              <p>19%</p>
+            </div>
+          </li>
+          <li class="overview__card">
+            <h3>Total Views</h3>
+            <img src="./imgs/icon-youtube.svg" alt="" />
+            <strong>1407</strong>
+            <div class="states states--red">
+              <img src="./imgs/icon-down.svg" alt="" />
+              <p>12%</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <script src="code.js"></script>
+  </body>
+</html>
